@@ -11,6 +11,7 @@ int registro() //Função responsavel por cadastrar os usuarios no sitema
 	char nome[40];
 	char sobrenome[40];
 	char cargo[40];
+	char email[40];
 	//Final da criação de variaveis/string
 	
 	printf("Digite o CPF a ser cadastrado: ");//Coletando informção do usuario
@@ -55,6 +56,17 @@ int registro() //Função responsavel por cadastrar os usuarios no sitema
 	file = fopen(arquivo, "a"); //Abre o arquivo já salvo atualizar
 	fprintf(file,cargo); //Salva o valor da string
 	fclose(file); //Fecha o arquivo
+	
+	file = fopen(arquivo, "a");
+	fprintf(file, ",");
+	fclose(file);
+	
+	printf("Digite o email a ser cadastrado: ");
+	scanf("%s",email);
+	
+	file = fopen(arquivo, "a");
+	fprintf(file,email);
+	fclose(file);
 	
 	system("pause"); //Pausa o programa e aguarda o usuário apertar qualquer tecla para continuar
 	
